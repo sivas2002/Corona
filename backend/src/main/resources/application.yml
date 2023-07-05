@@ -1,0 +1,35 @@
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+  ssl:
+    key-store-type: PKCS12
+    key-store: classpath:cert.pfx
+    key-store-password: vax-warden
+    enabled: true
+
+spring:
+  application:
+    name: backend
+  jpa:
+    show-sql: false
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      javax:
+        persistence:
+          validation:
+            mode: none
+    defer-datasource-initialization: false
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: spring
+    url: jdbc:mariadb://vax-warden-db:3306/hse?createDatabaseIfNotExist=true
+  sql:
+    init:
+      data-locations:
+      mode: always
+
+jwt_secret: NgHSMb5QkM+JPkZd7AiowzM0f5v5r3pYlqL3ltymWHawdxcun7ATNbgmu4BVMh8XOM/VTxYwU//WpA5V2PSogtGKakG+ynziCZ8JRfQYE9dTRaHgMr6Sk83X7Bwd1L3m6Y8mxzkke/MFJlgUViDwZa3pg9xhdBOei1dXrXxaBjJ0vGKBM5sv1qX4kJoQ2y4lo6kTlC9Y8nv9OzBW2iEOa1Dwmkzr5xlULjbykDX/cLIvzc+V7hPvWu/zutV14NPgv2lZ4MJ69Oi/GsirniFOPQuAXcCN66r2fOzeWqmE6v1KrHBFuTwL2ZQzVvTzcayJCqgKy7TVXpVnnLsA/wNCcQ==

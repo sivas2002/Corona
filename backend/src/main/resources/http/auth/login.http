@@ -1,0 +1,7 @@
+POST https://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "email": "jane.doe@ucd.ie", 
+  "password": "Admin!234"
+}
